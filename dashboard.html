@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>My Dashboard::MarcheCredit</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" sizes="32x32" type="image/x-icon">
+    <!-- Custom - from scss/style.scss -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pk-loader">
+        <svg id="triangle" viewBox="-3 -4 39 39">
+             <polygon fill="#EFEFEF" stroke="#555" stroke-width="1" points="16,0 32,32 0,32"></polygon>
+        </svg>
+        <div class="loader-text">© 2018 CreditMarche.</div>
+    </div>
+    <!-- Header Starts Here -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="current-menu-item"><a href="index.html">Home</a></li>
+                    <li><a href="#">View Offers</a></li>
+                    <li><a href="#">Publish an Offer</a></li>
+                </ul>
+            </nav>
+            <a class="logo" href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <aside class="authentication-sec">
+                <div class="user_view"><span class="user_icon"><img src="images/user_img.png"></span><span class="caret1">pierre karim<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    <ul class="view_links" style="display: none;">
+                        <li>
+                            <a href="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">View offers</a>
+                        </li>
+                        <li>
+                            <a href="#">View Invoices</a>
+                        </li>
+                        <li>
+                            <a href="#">Payment Methods</a>
+                        </li>
+                        <li>
+                            <a href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </header>
+    <!-- Header Ends Here -->
+    <section class="internal-banner" style="background:url(images/banner-image.jpg);">
+        <div class="container">
+            <h1>Phone Credit Trading Place</h1>
+        </div>
+    </section>
+    <section class="market-rates-section" style="background:url(images/market-rate-bg.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="rates-block">
+                        <div class="block">
+                            <div class="networks-type">
+                                <span class="type1">o</span>
+                                <span class="type2">k</span>
+                            </div>
+                            <div class="credit-market-rates">
+                                <h3>Credit Market Rate</h3>
+                                <p>216% <span class="dec">(-12 pts)</span></p>
+                                <p>278% <span class="dec">(-16 pts)</span></p>
+                            </div>
+                            <div class="internetV-market-rates">
+                                <h3>Internet V. Market Rate (F/MB)</h3>
+                                <p>0.25 <span class="dec">(-14%)</span></p>
+                                <p>0.15 <span class="inc">(+18%)</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rates-block">
+                        <div class="block">
+                            <div class="networks-type">
+                                <span class="type3">T</span>
+                                <span class="type4">E</span>
+                            </div>
+                            <div class="credit-market-rates">
+                                <h3>Credit Market Rate</h3>
+                                <p>655% <span class="dec">(+19 pts)</span></p>
+                                <p>857% <span class="dec">(-11 pts)</span></p>
+                            </div>
+                            <div class="internetV-market-rates">
+                                <h3>Internet V. Market Rate (F/MB)</h3>
+                                <p>0.13 <span class="dec">(-3%)</span></p>
+                                <p>0.09 <span class="inc">(+10%)</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="dashboard">
+        <div class="container">
+            <h2 class="title"><span>my</span> Dashboard</h2>
+            <div class="dashboard-tabbing">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-Published-tab" data-toggle="pill" href="#pills-Published" role="tab" aria-controls="pills-Published" aria-selected="true">Offers Published</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-Sold-tab" data-toggle="pill" href="#pills-Sold" role="tab" aria-controls="pills-Sold" aria-selected="false">Offers Sold</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-Offers-tab" data-toggle="pill" href="#pills-Offers" role="tab" aria-controls="pills-Offers" aria-selected="false">Offers Purchased</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-virtual-tab" data-toggle="pill" href="#pills-virtual" role="tab" aria-controls="pills-virtual" aria-selected="false">virtual money</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Chat with us</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Published" role="tabpanel" aria-labelledby="pills-Published-tab">
+                        <div class="offer-srch-sec">
+                            <form>
+                                <div class="form-group">
+                                    <label>Date of Publish</label>
+                                    <div class="form-control dtpicker">
+                                        <input id="datepicker" placeholder="Select">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Offer Type</label>
+                                    <div class="form-control">
+                                        <select>
+                                             <option disabled>select</option>
+                                             <option>Offer Type1</option>
+                                             <option>Offer Type2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Network Operator</label>
+                                    <div class="form-control">
+                                        <select>
+                                              <option disabled>select</option>
+                                              <option>Operator1</option>
+                                              <option>Operator2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-submit">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </form>
+                        </div>
+                        <section class="boxes-container">
+                            <div class="container">
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn disable-btn">disable</a>
+                                            <a class="btn buy-btn">edit offer</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>Expiration Date of Pass Internet</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication</th>
+                                                <th>Date of Expiration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                                <td>9 days</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn red-btn">Archive</a>
+                                            <a class="btn buy-btn">edit offer</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Value of Credits (F)</th>
+                                                <th>Expiration Date of Pass Internet</th>
+                                                <th>Bonus Credits valid on network</th>
+                                                <th>Offer Type</th>
+                                                <th>Promotion Type</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication</th>
+                                                <th>Date of Expiration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1000</td>
+                                                <td>30 June 2018</td>
+                                                <td>Any Network</td>
+                                                <td>Phone credit</td>
+                                                <td>400%</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                                <td>9 days</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn red-btn">Archive</a>
+                                            <a class="btn buy-btn">edit offer</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Value of Credits (F)</th>
+                                                <th>Expiration Date of Pass Internet</th>
+                                                <th>Bonus Credits valid on network</th>
+                                                <th>Offer Type</th>
+                                                <th>Promotion Type</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication</th>
+                                                <th>Date of Expiration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1000</td>
+                                                <td>30 June 2018</td>
+                                                <td>Any Network</td>
+                                                <td>Phone credit</td>
+                                                <td>400%</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                                <td>9 days</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination">
+                                    <img src="images/pagination.jpg">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade" id="pills-Sold" role="tabpanel" aria-labelledby="pills-Sold-tab">
+                        <div class="offer-srch-sec">
+                            <form>
+                                <div class="form-group">
+                                    <label>Date of Publish</label>
+                                    <div class="form-control dtpicker">
+                                        <input id="datepicker1" placeholder="Select">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Offer Type</label>
+                                    <div class="form-control">
+                                        <select>
+                                             <option disabled>select</option>
+                                             <option>Offer Type1</option>
+                                             <option>Offer Type2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Network Operator</label>
+                                    <div class="form-control">
+                                        <select>
+                                              <option disabled>select</option>
+                                              <option>Operator1</option>
+                                              <option>Operator2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-submit">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </form>
+                        </div>
+                        <section class="boxes-container">
+                            <div class="container">
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>Date sold</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>Date sold</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>Date sold</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>Selling Price(F)</th>
+                                                <th>Date of Publication
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                                <td>6 June 2018</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination">
+                                    <img src="images/pagination.jpg">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade" id="pills-Offers" role="tabpanel" aria-labelledby="pills-Offers-tab">
+                        <div class="offer-srch-sec">
+                            <form>
+                                <div class="form-group">
+                                    <label>Date of Publish</label>
+                                    <div class="form-control dtpicker">
+                                        <input id="datepicker2" placeholder="Select">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Offer Type</label>
+                                    <div class="form-control">
+                                        <select>
+                                             <option disabled>select</option>
+                                             <option>Offer Type1</option>
+                                             <option>Offer Type2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Network Operator</label>
+                                    <div class="form-control">
+                                        <select>
+                                              <option disabled>select</option>
+                                              <option>Operator1</option>
+                                              <option>Operator2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-submit">
+                                    <input type="submit" value="Search">
+                                </div>
+                            </form>
+                        </div>
+                        <section class="boxes-container">
+                            <div class="container">
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn red-btn">claim credits</a>
+                                            <a class="btn buy-btn">Credit Received</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>purchase Date</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>purchase Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn red-btn">claim credits</a>
+                                            <a class="btn buy-btn">Credit Received</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Value of Credits (F)</th>
+                                                <th>purchase Date</th>
+                                                <th>Offer Type</th>
+                                                <th>Bonus Credits valid on network</th>
+                                                <th>Promotion Type</th>
+                                                <th>purchase Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1000</td>
+                                                <td>30 June 2018</td>
+                                                <td>Phone Credit</td>
+                                                <td>Any Network</td>
+                                                <td>400%</td>
+                                                <td>2000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="offer-block">
+                                    <div class="top-head">
+                                        <h3>Offers: company</h3>
+                                        <div class="btns-outer">
+                                            <a class="btn buy-btn red-btn">claim credits</a>
+                                            <a class="btn buy-btn">Credit Received</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Internet Volume (mb)</th>
+                                                <th>purchase Date</th>
+                                                <th>Offer Type</th>
+                                                <th>Ratio (F/MB)</th>
+                                                <th>purchase Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>30 June 2018</td>
+                                                <td>Internet Volume</td>
+                                                <td>0, 75</td>
+                                                <td>2000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination">
+                                    <img src="images/pagination.jpg">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade" id="pills-virtual" role="tabpanel" aria-labelledby="pills-virtual-tab">
+                        <div class="history-block">
+                            <div class="offer-block">
+                                <div class="top-head">
+                                    <h3>History</h3>
+                                    <div class="btns-outer">
+                                        <a class="btn buy-btn withdraw-btn">Withdraw Money</a>
+                                    </div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Sr. No.</th>
+                                            <th>Transaction Type</th>
+                                            <th>Debit</th>
+                                            <th>Credit</th>
+                                            <th>Date</th>
+                                            <th>time</th>
+                                            <th>ID Transaction</th>
+                                            <th>Running Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Starting Balance</td>
+                                            <td>&nbsp;</td>
+                                            <td>5000</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>DS-55455H5</td>
+                                            <td>5000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2a</td>
+                                            <td>purchase</td>
+                                            <td>2280</td>
+                                            <td>&nbsp;</td>
+                                            <td>25/6/18</td>
+                                            <td>11h00</td>
+                                            <td>54dfg5452</td>
+                                            <td>2720</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2b</td>
+                                            <td>Sales comission</td>
+                                            <td>550</td>
+                                            <td>&nbsp;</td>
+                                            <td>26/6/18</td>
+                                            <td>&nbsp;</td>
+                                            <td>FS5657fgr7</td>
+                                            <td>2170</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="offer-block fund-account">
+                                <p>Please Fund Your Account with 2400F</p>
+                                <a href="#" class="btn fund-btn" data-toggle="modal" data-target="#fund">Fund</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Starts Here -->
+    <footer>
+        <div class="container">
+            <div class="wrap">
+                <div class="footer-nav">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="foot-block">
+                                <h3>Quick Links</h3>
+                                <ul>
+                                    <li><a href="#">How Are We?</a></li>
+                                    <li><a href="#">FAQ - Help</a></li>
+                                    <li><a href="#">Terms and Conditions</a></li>
+                                    <li><a href="#">Security Advices</a></li>
+                                    <li><a href="#">Web TV</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="foot-block">
+                                <h3>contact us</h3>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Street Address</span>123 lorem ipsu, South Africa
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Fax phone Number</span>123 456 7899
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Mobile Number</span><a href="tel:1234567899">123 456 7899</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="get-in-touch">
+                        <h2>get in touch</h2>
+                        <form>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Phone">
+                            </div>
+                            <div class="form-group txt">
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <input class="sbmt-btn" type="submit" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="footer-nav">
+                <div class="copy-right-sec">
+                    <p>Copyright © 2018 CreditMarche. Powered by: <a href="#" target="_blank">iMarkInfotech</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends Here -->
+    <!-- jQuery (necessary for JavaScript plugins) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Our Custom js here -->
+    <script src="js/custom.js"></script>
+
+    <!-- Payment method modal -->
+    <div class="modal fade login-reg" id="fund" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    <h2>Fund Your Account</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-method">
+                        <h3>Method Of Payment</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="images/orange-money-icon.png" alt="payment-method-image"></figure>
+                                    <figcaption>Orange Money</figcaption>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="images/tigocash-icon.png" alt="payment-method-image"></figure>
+                                    <figcaption>Tigo Cash</figcaption>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="images/e-money-icon.png" alt="payment-method-image"></figure>
+                                    <figcaption>Expresso eMoney</figcaption>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <figure><img src="images/wari-icon.png" alt="payment-method-image"></figure>
+                                    <figcaption>wari</figcaption>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="method-btn" href="#" data-dismiss="modal" aria-label="Close">cancel</a>
+                        <a class="method-btn" href="#" data-dismiss="modal" data-toggle="modal" data-target="#payFund">next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fund Payment modal -->
+    <div class="modal fade login-reg" id="payFund" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    <h2>Fund Your Account</h2>
+                    <p>You need to fund your account to buy Credits or Internet Bandwidth</p>
+                </div>
+                <div class="modal-body">
+                    <div class="amount-div">
+                        <form>
+                            <div class="amount-enter">
+                                <label>enter amount</label>
+                                <input type="text">
+                                <p>*You can Fund your Account more than Credit’s Sale Price</p>
+                            </div>
+                            <div class="select-amount">
+                                <h4>Select Amount</h4>
+                                <div class="amnts">
+                                    <p>
+                                        <input type="radio" id="test1" name="radio-group" checked>
+                                        <label for="test1">1000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test2" name="radio-group" checked>
+                                        <label for="test2">2000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test3" name="radio-group" checked>
+                                        <label for="test3">3000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test4" name="radio-group" checked>
+                                        <label for="test4">4000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test5" name="radio-group" checked>
+                                        <label for="test5">5000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test6" name="radio-group" checked>
+                                        <label for="test6">6000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test7" name="radio-group" checked>
+                                        <label for="test7">7000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test8" name="radio-group" checked>
+                                        <label for="test8">8000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test9" name="radio-group" checked>
+                                        <label for="test9">9000</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" id="test10" name="radio-group" checked>
+                                        <label for="test10">10,000</label>
+                                    </p>
+                                </div>
+                                <a class="paynow-btn" href="#">paynow</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

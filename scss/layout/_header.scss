@@ -1,0 +1,154 @@
+/************* Header *************/
+
+header {
+    width: 100%;
+    padding: rem(32) 0;
+    position: relative;
+    & .container {
+        @include flexbox;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & nav {
+        & ul {
+            & li {
+                font-size: rem(20);
+                text-transform: uppercase;
+                font-weight: 600;
+                display: inline-block;
+                margin: 0 rem(63) 0 0;
+                &:last-child {
+                    margin: 0;
+                }
+                & a {
+                    color: $main-color;
+                    position: relative;
+                    & .bottom-line {
+                        content: "";
+                        position: absolute;
+                        bottom: rem(-16);
+                        width: 100%;
+                        height: rem(2);
+                        background: $main-color;
+                        left: 0;
+                        width: 0;
+                        right: 0;
+                        @include transition(all 0.3s ease-in-out);
+                    }
+                }
+                &.current-menu-item,
+                &:hover {
+                    & a {
+                        color: $main-color;
+                        & .bottom-line {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .logo {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0; 
+        top: rem(14);
+        text-align: center;
+        width: rem(212);
+    }
+    & .authentication-sec {
+        & .login-btn {
+            display: inline-block;
+            height: rem(50);
+            width: rem(194);
+            line-height: rem(50);
+            color: $white;
+            font-size: rem(20);
+            font-weight: 600;
+            background: $main-color;
+            @include add-border(rem(1), $main-color, all);
+            border-radius: rem(30);
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 rem(10) 0 0;
+            &:hover,
+            &:focus {
+                background: $bg-hover-color;
+                border-color: $bg-hover-color;
+            }
+        }
+        & .signup-btn {
+            @extend .login-btn;
+            background: transparent;
+            margin: 0;
+            color: $main-color;
+            &:hover,
+            &:focus {
+                background: $main-color;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+.user_view {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    & .user_icon {
+        background: $off-grey;
+        border-radius: 50%;
+        display: inline-block;
+        height: rem(48);
+        overflow: hidden;
+        text-align: center;
+        width: rem(48);
+        vertical-align: middle;
+        
+        & img {
+            margin: rem(8) 0 0;
+        }
+    }
+    & .caret1 {
+        color: $main-color;
+        display: inline-block;
+        font-size: rem(20);
+        margin: 0 0 0 rem(12);
+        vertical-align: middle;
+        text-transform: uppercase;
+        color: $main-color;
+        font-weight: 600;
+        & i {
+            font-size: rem(14);
+            margin: 0 0 0 rem(3);
+        }
+    }
+    & .view_links {
+        background: $main-color;
+        position: absolute;
+        right: 0;
+        top: rem(80);
+        width: rem(215);
+        z-index: 10;
+        display: none;
+        li {
+            font-size: rem(14);
+            a {
+                color: $white;
+                display: block;
+                padding: rem(15);
+                @include add-border(rem(1), $cc-grey, bottom);
+            }
+            &:last-child {
+                & a {
+                    border: 0 none;
+                }
+            }
+        }
+    }
+}

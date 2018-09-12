@@ -1,0 +1,1375 @@
+/** Layout css Starts here **/
+
+.title {
+    font-size: rem(50);
+    color: $black;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 rem(20);
+    & span {
+        font-weight: 600;
+    }
+}
+
+.btn {
+    color: $white;
+    background: $main-color;
+}
+
+.home-slider {
+    @include flexbox;
+    text-align: center;
+    height: rem(765);
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+    & h1 {
+        margin: rem(115) 0 0;
+        font-weight: 600;
+        color: $main-color;
+        font-size: rem(62);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    & .carousel {
+        text-align: center;
+        margin-top: rem(68);
+        position: static;
+        & .carousel-item {
+            background-repeat: no-repeat !important;
+            margin: auto;
+            width: rem(1044);
+            height: rem(619);
+            overflow: hidden;
+            & .video-container {
+                width: rem(803);
+                height: rem(528);
+                margin: rem(32) auto 0;
+                overflow: hidden;
+                border-radius: rem(5);
+                & iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+        & .carousel-indicators {
+            flex-direction: column;
+            left: inherit;
+            margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            text-align: center;
+            height: auto;
+            right: 5%;
+            & li {
+                display: block;
+                cursor: pointer;
+                margin: 10px 0;
+                width: rem(18);
+                height: rem(18);
+                border-radius: 50%;
+                background: $indicators-color;
+                &.active {
+                    background: $white;
+                }
+            }
+        }
+    }
+}
+
+.market-rates-section {
+    height: rem(340);
+    padding-top: rem(150);
+    -webkit-animation: market-background 30.6s linear infinite;
+    animation: market-background 30.6s linear infinite;
+    & .rates-block {
+        @include flexbox;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        & .block {
+            display: inline-flex;
+            width: 100%;
+            & .networks-type {
+                flex: 0 0 5%;
+                align-self: flex-end;
+                & .type1 {
+                    background: $orange;
+                    width: rem(40);
+                    height: rem(40);
+                    color: $black;
+                    font-weight: 600;
+                    text-align: center;
+                    border-radius: 50%;
+                    line-height: rem(38);
+                    display: block;
+                    font-size: rem(20);
+                    text-transform: uppercase;
+                    margin: 0 0 rem(17) 0;
+                }
+                & .type2 {
+                    @extend .type1;
+                    background: $yellow;
+                    margin: 0;
+
+                }
+                & .type3 {
+                    @extend .type1;
+                    background: $blue;
+                    color: $white;
+
+                }
+                & .type4 {
+                    @extend .type1;
+                    background: $purple;
+                    margin: 0;
+                    color: $white;
+                }
+            }
+            & .credit-market-rates {
+                flex: 0 0 40%;
+                text-align: center;
+                & h3 {
+                    font-size: rem(20);
+                    text-transform: capitalize;
+                    font-weight: 400;
+                    color: $white;
+                }
+                & p {
+                    font-size: rem(20);
+                    font-weight: 400;
+                    color: $white;
+                    margin: rem(30) 0;
+                    &:last-of-type {
+                        margin: 0;
+                    }
+                    & .dec {
+                        color: $red;
+                    }
+                    & .inc {
+                        color: $parrot-green;
+                    }
+                }
+            }
+            & .internetV-market-rates {
+                @extend .credit-market-rates;
+                flex: 0 0 55%;
+            }
+        }
+    }
+}
+
+.ntwrk-form-section {
+    background: $main-color;
+    padding: rem(65) 0;
+    & form {
+        @include flexbox;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        & .form-group {
+            width: 20%;
+            margin: 0;
+            padding: 0;
+            & label {
+                color: $white;
+                font-size: rem(18);
+                text-transform: capitalize;
+                display: block;
+                font-weight: 400;
+            }
+            & .form-control {
+                background: transparent;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                position: relative;
+                & select {
+                    width: 100%;
+                    height: rem(48);
+                    @include add-border(rem(1), $white, all);
+                    border-radius: rem(30);
+                    background: transparent;
+                    @include appearance(none);
+                    color: $white;
+                    padding: 0 rem(42) 0 rem(15);
+                    position: relative;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                & select::-ms-expand {
+                    display: none;
+                }
+                &:after {
+                    content: "\f107";
+                    position: absolute;
+                    color: $white;
+                    font-family: $FontAwesome;
+                    right: rem(15);
+                    font-size: rem(23);
+                    right: rem(23);
+                    top: rem(6);
+                    z-index: 0;
+                }
+            }
+        }
+        & .form-submit {
+            width: 12%;
+            & input {
+                width: 100%;
+                height: rem(48);
+                @include add-border(rem(1), $white, all);
+                border-radius: rem(30);
+                background: $white;
+                font-size: rem(18);
+                font-weight: 500;
+                color: $main-color;
+                cursor: pointer;
+                @include transition(all 0.3s ease-in-out);
+                &:hover {
+                    background: $bg-hover-color;
+                    color: $white;
+                    border-color: $bg-hover-color;
+                }
+            }
+        }
+    }
+}
+
+.avlbl-offers {
+    padding: rem(95) 0;
+}
+
+.offer-block {
+    margin: 0 0 rem(20);
+    @include box-shadow ( 0 0 rem(20) $off-white);
+    border-radius: rem(25);
+    padding: rem(20);
+    & .top-head {
+        @include flexbox;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 rem(20);
+        & h3 {
+            font-size: rem(26);
+            text-transform: uppercase;
+            color: $red;
+            font-weight: 600;
+        }
+        & .btns-outer {
+            & .buy-btn {
+                text-transform: uppercase;
+                font-size: rem(16);
+                font-weight: 400;
+                padding: rem(7) rem(17);
+                color: $white;
+                border-radius: rem(30);
+                &.red-btn {
+                    background: $red;
+                    margin: 0 rem(8) 0 0;
+                }
+                &.disable-btn {
+                    background: $disable-btn-bg;
+                }
+                &:hover {
+                    background: $bg-hover-color;
+                    color: $white;
+                    border-color: $bg-hover-color;
+                }
+            }
+            & .status-point {
+                width: rem(15);
+                height: rem(15);
+                border-radius: 50%;
+                background: $light-orange;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: rem(13);
+                &.red-point {
+                    background: $red;
+                }
+                &.green-point {
+                    background: $green;
+                }
+            }
+
+        }
+
+    }
+    & table {
+        width: 100%;
+        text-align: center;
+        & tbody {
+            tr {
+                @include add-border(rem(1), $alt-white, top);
+            }
+
+        }
+        & th,
+        & td {
+            padding: rem(13) rem(10);
+        }
+        & th {
+            font-weight: 400;
+            color: $black;
+            font-size: rem(14);
+            text-transform: uppercase;
+        }
+        & td {
+            color: $black;
+            font-weight: 600;
+            font-size: rem(16);
+            text-transform: uppercase;
+            &.orange-txt {
+                color: $light-orange;
+            }
+            &.green-txt {
+                color: $green;
+            }
+            &.red-txt {
+                color: $red;
+            }
+        }
+    }
+    &.fund-account {
+        padding: rem(72) rem(20);
+        display: none;
+        & p {
+            font-size: rem(20);
+            color: $black;
+        }
+        & .fund-btn {
+            border-radius: rem(30);
+            padding: rem(7) rem(43);
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: rem(32) auto 0;
+            &:hover {
+                background: $bg-hover-color;
+                color: $white;
+                border-color: $bg-hover-color;
+            }
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+    margin: rem(65) 0;
+    & img {
+        margin: auto;
+    }
+}
+
+.internal-banner {
+    text-align: center;
+    padding: rem(60) 0;
+    & h1 {
+        font-weight: 600;
+        color: $main-color;
+        font-size: rem(62);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+}
+
+.innerPages {
+    padding: rem(75) 0;
+    & h2 {
+        font-size: rem(28);
+        color: $alt-grey;
+        font-weight: 500;
+        margin: 0 0 rem(13);
+
+    }
+    & p {
+        color: $light-grey;
+        font-size: rem(16);
+        line-height: 1.6;
+        margin: 0 0 rem(44);
+        font-weight: 300;
+    }
+    & ul {
+        & li {
+            color: $light-grey;
+            font-size: rem(16);
+            line-height: 1.6;
+            margin: 0 0 rem(40);
+            font-weight: 300;
+            position: relative;
+            padding-left: rem(30);
+            &:before {
+                content: url(../images/bullet-arrow.png);
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: $main-color;
+            }
+        }
+    }
+}
+
+/**********************************************************Blog Page CSS**************************************************************/
+
+.blog-sec {
+    padding: rem(80) 0;
+    & .main-blogs {}
+    & .blog-box {
+        margin: 0 0 rem(60);
+        & figure {
+            width: 100%;
+            height: rem(488);
+            overflow: hidden;
+            margin: 0 0 rem(20);
+            & img {
+                transform: scale(1);
+                @include transition(all 0.3s ease-in-out);
+            }
+        }
+        & h2 {
+            font-size: rem(28);
+            color: $alt-grey;
+            font-weight: 500;
+            margin: 0 0 rem(13);
+            & a {
+                color: $alt-grey;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+        & p {
+            color: $light-grey;
+            font-size: rem(16);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        & .read-more-btn {
+            color: $main-color;
+            display: inline-block;
+            font-size: rem(20);
+            line-height: 1.6;
+            font-weight: 300;
+            margin: rem(15) 0 0;
+            &:hover {
+                letter-spacing: 5px;
+            }
+        }
+        &:hover {
+            & figure {
+                & img {
+                    transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                }
+            }
+        }
+        &.full-blog {
+            & p {
+                margin: 0 0 rem(40);
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+            &:hover {
+                & figure {
+                    & img {
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.blog-foot {
+    @include flexbox;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include add-border(rem(1), $off-grey, top);
+    @include add-border(rem(1), $off-grey, bottom);
+    padding: rem(20) 0;
+    overflow: hidden;
+    margin: rem(28) 0 0;
+    & .author-name {
+        & p {
+            font-size: rem(16);
+            font-weight: 300;
+            color: $grey-author;
+        }
+    }
+    & ul {
+        & li {
+            display: inline-block;
+            font-size: rem(14);
+            & a {
+                display: block;
+                @include add-border(rem(1), $off-grey, all);
+                width: rem(28);
+                height: rem(28);
+                text-align: center;
+                line-height: rem(27);
+                & .fa-facebook {
+                    color: $fb-color;
+                }
+                & .fa-twitter {
+                    color: $twitter-color;
+                }
+                & .fa-linkedin {
+                    color: $linkedin-color;
+                }
+                & .fa-google-plus {
+                    color: $google-color;
+                }
+                & .fa-youtube {
+                    color: $youtube-color;
+                }
+                &:hover {
+                    background: $main-color;
+                    color: $white;
+                    & i {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.blog-sidebar {
+    & .srch-div {
+        width: 100%;
+        @include add-border(rem(1), $off-grey, all);
+        position: relative;
+        border-radius: rem(30);
+        height: rem(48);
+        & input {
+            width: 100%;
+            padding: 0 rem(52) 0 rem(20);
+            border: 0;
+            background: none;
+            height: 100%;
+        }
+        & button {
+            position: absolute;
+            right: rem(12);
+            border: 0;
+            font-size: rem(26);
+            background: transparent;
+            top: rem(2);
+            z-index: 1;
+            cursor: pointer;
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+.recent-posts {
+    margin: rem(55) 0 0;
+    & h2 {
+        font-size: rem(25);
+        font-weight: 500;
+        color: $alt-grey;
+        text-transform: uppercase;
+        @include add-border(rem(1), $cc-grey, top);
+        @include add-border(rem(1), $cc-grey, bottom);
+        text-align: center;
+        padding: rem(12) 0;
+        margin: 0 0 rem(30);
+    }
+    & .post-block {
+        @include flexbox;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 rem(20);
+        & figure {
+            width: rem(80);
+            height: rem(74);
+            & img {
+                width: 100%;
+            }
+        }
+        & figcaption {
+            flex: 0 0 72%;
+            & h4 {
+                font-size: rem(19);
+                font-weight: 500;
+                color: $alt-grey;
+                margin: 0 0 rem(5);
+                & a {
+                    color: $alt-grey;
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+            & p {
+                color: $alt-grey;
+                font-size: rem(16);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.publish-offer {
+    padding: rem(100) 0;
+    position: relative;
+    background: url(../images/publish-bg.jpg) no-repeat scroll 0 0;
+    & .publish-window {
+        width: 70%;
+        background: $white;
+        @include box-shadow ( 0 0 rem(20) $off-white);
+        border-radius: rem(25);
+        padding: rem(40) 0 0;
+        max-width: rem(950);
+        margin: rem(35) 0 0;
+        & .nav-pills {
+            justify-content: center;
+            & .nav-item {
+                display: inline-block;
+                margin: 0 rem(40);
+            }
+            & .nav-link {
+                font-weight: 500;
+                color: $black;
+                font-size: rem(24);
+                background: transparent !important;
+                border-radius: 0;
+                padding: 0;
+                &.active {
+                    @include add-border(rem(3), $main-color, bottom);
+                }
+            }
+        }
+        & .tab-content {
+            & form {
+                @include add-border(rem(1), $grey-white, top);
+                padding: rem(50);
+                margin: rem(30) 0 0;
+
+                & .form-group {
+                    padding: 0;
+                    margin: 0;
+                    border: 0;
+                    @include flexbox;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                & .form-control {
+                    padding: 0;
+                    margin: 0 0 rem(30);
+                    border: 0;
+                    width: 48%;
+                    position: relative;
+                    & label {
+                        color: $main-color;
+                        font-size: rem(18);
+                        font-weight: 500;
+                        text-transform: capitalize;
+                    }
+                    & input,
+                    & select {
+                        width: 100%;
+                        height: rem(48);
+                        @include add-border(rem(1), $grey-border, all);
+                        border-radius: rem(30);
+                        font-size: rem(18);
+                        padding: 0 rem(20);
+                        font-weight: 300;
+                        &:focus {
+                            border-color: $main-color;
+                        }
+                    }
+                    & select {
+                        @include appearance(none);
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 1;
+                        background: transparent;
+                    }
+                    & select::-ms-expand {
+                        display: none;
+                    }
+                    &.slct {
+                        position: relative;
+                        z-index: 0;
+                        &:after {
+                            content: "\f107";
+                            position: absolute;
+                            color: $main-color;
+                            font-family: $FontAwesome;
+                            right: rem(15);
+                            font-size: rem(23);
+                            right: rem(23);
+                            top: rem(41);
+                            z-index: 0;
+                        }
+                    }
+                }
+                & input[type="button"] {
+                    display: inline-block;
+                    width: rem(203);
+                    height: rem(48);
+                    background: $grey-white;
+                    border: 0;
+                    text-align: center;
+                    text-transform: capitalize;
+                    border-radius: rem(30);
+                    font-weight: 500;
+                    font-size: rem(18);
+                    color: $mitti-color;
+                    margin: rem(14) rem(4) 0;
+                    cursor: pointer;
+                    @include transition(all 0.4s ease-in-out);
+                    &:hover,
+                    &:focus {
+                        background: $main-color;
+                        color: $white;
+                    }
+                    &.validate-btn {
+                        background: $main-color;
+                        color: $white;
+                        &:hover,
+                        &:focus {
+                            background: $bg-hover-color;
+                        }
+                    }
+                }
+            }
+        }
+        @include breakpoint(large) {
+            width: 60%;
+        }
+    }
+    & .person-image {
+        position: absolute;
+        right: rem(58);
+        top: rem(125);
+        @include breakpoint(large) {
+            width: rem(530);
+            right: rem(20);
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+        }
+    }
+}
+
+/**********************************************************Faq CSS************************************************************/
+
+.faq {
+    padding: 80px 0 60px;
+    & #accordion {
+        & .card {
+            background: none;
+            border: 0;
+            margin: 0 0 20px;
+        }
+        & .card-header {
+            padding: 0;
+            border: 0;
+            border-radius: rem(30) !important;
+            overflow: hidden;
+        }
+        & .btn-link {
+            width: 100%;
+            display: block;
+            text-align: left;
+            background: $alt-white;
+            font-size: rem(20);
+            font-weight: 500;
+            color: $alt-grey;
+            border-radius: 0;
+            position: relative;
+            padding: rem(8) rem(15) rem(8) rem(80);
+            cursor: pointer;
+            text-decoration: none;
+            white-space: normal;
+            @include transition(all 0.3s ease-in-out);
+            text-transform: uppercase;
+            &:hover {
+                background: $main-color;
+                color: $white;
+                &:before {
+                    color: $alt-white;
+                }
+            }
+            &.collapsed {
+                &:before {
+                    content: "\f067";
+                    font-family: $FontAwesome;
+                    left: 0;
+                    top: 0;
+                    font-size: rem(20);
+                    background: $main-color;
+                    color: $white;
+                    width: rem(46);
+                    border-radius: 50%;
+                    height: 100%;
+                    line-height: 2.2;
+                    text-align: center;
+                }
+            }
+            &:before {
+                content: "\f068";
+                position: absolute;
+                font-family: $FontAwesome;
+                left: 0;
+                top: 0;
+                font-size: rem(20);
+                background: $main-color;
+                color: $white;
+                width: rem(46);
+                border-radius: 50%;
+                height: 100%;
+                line-height: 2.2;
+                text-align: center;
+            }
+        }
+        & .card-body {
+            font-size: rem(16);
+            color: $alt-grey;
+            padding: rem(20) rem(15) rem(20) rem(74);
+            font-weight: 300;
+
+        }
+    }
+}
+
+/**********************************************************Dashboard CSS************************************************************/
+
+.dashboard {
+    text-align: center;
+    padding: rem(60) 0;
+
+    & #pills-tab {
+        justify-content: space-between;
+        & .nav-item {
+            width: 18%;
+            & .nav-link {
+                background: $tab-bg-color;
+                padding: rem(13) rem(3);
+                border-radius: rem(5);
+                text-transform: uppercase;
+                font-size: rem(20);
+                font-weight: 500;
+                color: $black;
+                &:hover,
+                &.active {
+                    color: $white;
+                    background: $main-color;
+                }
+            }
+        }
+    }
+    & .tab-content {
+        & .tab-pane {
+
+            & .offer-srch-sec {
+                width: 100%;
+                max-width: rem(1095);
+                margin: rem(65) auto;
+                & form {
+                    @include flexbox;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    & .form-group {
+                        width: 26%;
+                        margin: 0;
+                        padding: 0;
+                        & label {
+                            color: $srch-input-box-color;
+                            font-size: rem(18);
+                            text-transform: capitalize;
+                            display: block;
+                            font-weight: 400;
+                            text-align: left;
+                        }
+                        & .form-control {
+                            background: transparent;
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                            position: relative;
+                            & select,
+                            & input {
+                                width: 100%;
+                                height: rem(48);
+                                @include add-border(rem(1), $srch-border-color, all);
+                                border-radius: rem(30);
+                                background: transparent;
+                                @include appearance(none);
+                                color: $srch-input-box-color;
+                                padding: 0 rem(42) 0 rem(15);
+                                position: relative;
+                                z-index: 1;
+                                cursor: pointer;
+                            }
+                            & select::-ms-expand {
+                                display: none;
+                            }
+                            &:after {
+                                content: "\f107";
+                                position: absolute;
+                                color: $srch-input-box-color;
+                                font-family: $FontAwesome;
+                                right: rem(15);
+                                font-size: rem(23);
+                                right: rem(23);
+                                top: rem(6);
+                                z-index: 0;
+                            }
+                            &.dtpicker {
+                                &:after {
+                                    content: "\f073";
+                                    position: absolute;
+                                    color: $srch-input-box-color;
+                                    font-family: $FontAwesome;
+                                    right: rem(15);
+                                    font-size: rem(23);
+                                    right: rem(23);
+                                    top: rem(6);
+                                    z-index: 0;
+                                }
+                            }
+                        }
+                    }
+                    & .form-submit {
+                        width: 12%;
+                        & input {
+                            width: 100%;
+                            height: rem(48);
+                            @include add-border(rem(1), $srch-border-color, all);
+                            border-radius: rem(30);
+                            background: $main-color;
+                            font-size: rem(18);
+                            font-weight: 500;
+                            color: $white;
+                            cursor: pointer;
+                            @include transition(all 0.3s ease-in-out);
+                            &:hover {
+                                background: $bg-hover-color;
+                                color: $white;
+                                border-color: $bg-hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/**********************************************************Modals CSS************************************************************/
+
+.modal {
+    text-align: center;
+    justify-content: center;
+    &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        margin-right: -rem(-4);
+    }
+    & .modal-dialog {
+        max-width: rem(705);
+        margin: rem(30) auto;
+        width: 90%;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 99999999;
+    }
+
+    & .modal-content {
+        padding: 0;
+        text-align: center;
+        border: 0;
+        background: #005761;
+        background: linear-gradient(to top left, #005761 50%, #005d67 50%);
+        background: -webkit-linear-gradient(to top left, #005761 50%, #005d67 50%);
+        border-radius: 0;
+        & .modal-header {
+            padding: 0;
+            border: 0;
+            position: relative;
+            background: $dark-blue;
+            flex-wrap: wrap;
+            & .nav-pills {
+                width: 100%;
+                @include add-border(rem(1), $model-header-border-color, bottom);
+                & .nav-item {
+                    width: 50%;
+                    & .nav-link {
+                        background: none;
+                        font-size: rem(30);
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        border-radius: 0;
+                        color: $white;
+                        &.active {
+                            background: $white;
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+            & .close {
+                width: rem(55);
+                height: rem(55);
+                border-radius: 50%;
+                background: #fff;
+                opacity: 1;
+                position: absolute;
+                right: rem(-23);
+                color: #039fb1;
+                @include add-border(rem(4), $close-btn-border, all);
+                line-height: rem(47);
+                margin: 0 !important;
+                padding: 0 !important;
+                text-align: center;
+                top: rem(-25);
+                &:hover {
+                    border-color: $main-color;
+                    color: $main-color;
+                }
+            }
+        }
+        & .modal-body {
+            padding: rem(60) rem(60);
+            text-align: center;
+            & .tab-content {
+                & ul {
+                    & li {
+                        width: 98%;
+                        margin: 0 0 rem(20);
+                        display: inline-block;
+                        & label {
+                            font-size: rem(16);
+                            font-weight: 300;
+                            text-transform: capitalize;
+                            width: 100%;
+                            text-align: left;
+                            color: $white;
+                            & span {
+                                color: $white;
+                            }
+                        }
+                        & input,
+                        & select {
+                            @include add-border(rem(1), $white, all);
+                            height: rem(50);
+                            background: none;
+                            width: 100%;
+                            padding: 0 rem(20);
+                            color: $white;
+                            background: transparent;
+                            @include appearance(none);
+                        }
+                        & select {
+                            position: relative;
+                            z-index: 1;
+                            cursor: pointer;
+                        }
+                        & select::-ms-expand {
+                            display: none;
+                        }
+                        & .slct {
+                            position: relative;
+                            z-index: 0;
+                            &:after {
+                                content: "\f107";
+                                position: absolute;
+                                color: $white;
+                                font-family: $FontAwesome;
+                                right: rem(15);
+                                font-size: rem(23);
+                                right: rem(23);
+                                top: rem(10);
+                                z-index: 0;
+                            }
+                        }
+                    }
+                    margin: 0 0 rem(40);
+                }
+                & .login-form {}
+                & .reg-form {
+                    & ul {
+                        & li + li {
+                            width: 48%;
+                            margin: 0 0.5% rem(20);
+                        }
+                    }
+                }
+            }
+            & input[type="button"] {
+                display: inline-block;
+                margin: 0 rem(4);
+                height: rem(63);
+                width: rem(202);
+                text-transform: uppercase;
+                font-size: rem(24);
+                color: $main-color;
+                border: 0;
+                font-weight: 600;
+                cursor: pointer;
+                @include transition(all 0.3s ease-in-out);
+                &:hover,
+                &:focus {
+                    border-radius: rem(20);
+                    background: $light-blue;
+                }
+            }
+        }
+    }
+
+
+}
+
+.modal-open .modal {
+    overflow-x: visible !important;
+}
+
+.modal-open {
+    overflow-y: auto !important;
+}
+
+#fund {
+    & .modal-header {
+        text-align: center;
+        & h2 {
+            color: $white;
+            font-size: rem(30);
+            text-transform: uppercase;
+            padding: rem(18) rem(10);
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+    }
+    & .modal-body {
+        padding: 0;
+        background: $white;
+    }
+    & .payment-method {
+        text-align: center;
+        padding: rem(40) 0;
+        & h3 {
+            font-size: rem(24);
+            text-transform: capitalize;
+            color: $dark-blue;
+            font-weight: 300;
+        }
+        & ul {
+            margin: 0 0 rem(40);
+            & li {
+                display: inline-block;
+                width: 70%;
+                clear: both;
+                margin: rem(40) 0 0;
+                & a {
+                    font-size: rem(18);
+                    text-transform: capitalize;
+                    color: $dark-blue;
+                    font-weight: 500;
+                    & figure {
+                        display: inline-block;
+                        margin: 0 20px;
+                        width: 28%;
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+                    & figcaption {
+                        display: inline-block;
+                        margin: 0;
+                        width: 40%;
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        & .method-btn {
+            display: inline-block;
+            font-size: rem(24);
+            text-transform: uppercase;
+            color: $white;
+            background: $dark-blue;
+            font-weight: 500;
+            padding: rem(12) rem(35);
+            letter-spacing: 2px;
+            margin: 0 rem(3);
+            &:hover {
+                border-radius: rem(15);
+            }
+        }
+    }
+}
+
+#payFund {
+    & .modal-header {
+        text-align: center;
+        background: $white;
+        border-radius: 0;
+        padding: rem(14) rem(10);
+        & h2 {
+            color: $dark-blue;
+            font-size: rem(30);
+            text-transform: uppercase;
+            padding: 0;
+            text-align: center;
+            flex: 0 0 100%;
+        }
+        & p {
+            flex: 0 0 100%;
+            font-weight: 300;
+            color: $black;
+        }
+    }
+    & .amount-div {
+        width: 100%;
+        & .amount-enter {
+            @include flexbox;
+            width: 100%;
+            flex-wrap: wrap;
+            position: relative;
+            @include add-border(rem(1), $radio-btn-color, bottom);
+            padding: 0 0 rem(50);
+            & label {
+                width: 100%;
+                color: $white;
+                font-weight: 300;
+                text-transform: capitalize;
+                font-size: rem(18);
+            }
+            & input {
+                height: rem(52);
+                @include add-border(rem(1), $white, all);
+                text-align: center;
+                width: 100%;
+                background: none;
+                margin: rem(12) 0;
+                color: $white;
+            }
+            & p {
+                width: 100%;
+                color: $white;
+                font-weight: 300;
+                font-size: rem(16);
+            }
+            &:after{position: absolute;content: "OR"; color: $white;background: #005d67;left: 0;right: 0;margin: auto;padding: rem(10) 0; width: rem(50);bottom: rem(-23);}
+        }
+    }
+    & .select-amount {
+        margin: rem(55) 0 0;
+        & h4 {
+            width: 100%;
+            color: $white;
+            font-weight: 300;
+            text-transform: capitalize;
+            font-size: rem(18);
+            margin: 0 0 rem(40);
+        }
+        & .amnts {
+            @include flexbox;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            & p {
+                width: 20%;
+                margin: 0 0 rem(20);
+            }
+        }
+        & .paynow-btn {
+            width: rem(202);
+            height: rem(63);
+            line-height: rem(62);
+            text-align: center;
+            margin: rem(20) auto 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $main-color;
+            background: $white;
+            display: block;
+            font-size: rem(24);
+            &:hover{border-radius: rem(15);}
+        }
+    }
+}
+
+
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: rem(28);
+    cursor: pointer;
+    line-height: rem(20);
+    display: inline-block;
+    color: $white;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: rem(16);
+    height: rem(16);
+    @include add-border(rem(1), $radio-btn-color, all) border-radius: 100%;
+    background: none;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: rem(10);
+    height: rem(10);
+    background: $white;
+    position: absolute;
+    top: rem(3);
+    left: rem(3);
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}

@@ -1,0 +1,166 @@
+/************* Footer *************/
+
+footer {
+    background: $light-blue url(../images/footer-bg.jpg) no-repeat right center;
+    background-size: 50% 100%;
+    position: relative;
+    padding-top: rem(50);
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.7);
+        bottom: 0;
+        height: 100%;
+        width: 50%;
+    }
+    & .wrap {
+        @include flexbox;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    & .footer-nav {
+        width: 50%;
+    }
+    & .foot-block {
+        margin: rem(30) 0 0;
+        & h3 {
+            color: $light-black;
+            font-size: rem(18);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 0 rem(20);
+        }
+        & ul {
+            & li {
+                color: $light-black;
+                font-size: rem(18);
+                font-weight: 400;
+                margin: 0 0 rem(12);
+                & a {
+                    color: $light-black;
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+        & .contct-info {
+            display: inline-flex;
+            width: 100%;
+            margin: 0 0 rem(28);
+            & .icon {
+                flex: 0 0 8%;
+                color: $main-color;
+                font-size: rem(20);
+                & .fa-mobile {
+                    font-size: rem(30);
+                }
+            }
+            & .dtl {
+                flex: 0 0 91%;
+                & p {
+                    color: $light-black;
+                    font-size: rem(18);
+                    font-weight: 400;
+                    & span {
+                        display: block;
+                        font-weight: 600;
+                    }
+                    & a {
+                        color: $light-black;
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copy-right-sec {
+    @include add-border(rem(1), $grey, top);
+    text-align: center;
+    padding: rem(30) rem(5);
+    & p {
+        color: $light-black;
+        font-size: rem(18);
+        font-weight: 400;
+        & a {
+            color: $sky-blue;
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}
+
+.get-in-touch {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 0 rem(60);
+    & h2 {
+        font-size: rem(30);
+        font-weight: 600;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0 0 rem(40);
+    }
+    & form {
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & .form-group {
+            flex: 0 0 49%;
+            margin: 0 0 rem(40);
+            padding: 0;
+            box-shadow: none;
+            &.txt {
+                flex: 0 0 100%;
+            }
+            & .form-control {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                background: none;
+                border: 0;
+                @include add-border(rem(1), $light-white, bottom);
+                border-radius: 0;
+                color: $white;
+                box-shadow: none;
+                height: rem(32);
+                @include placeholder{
+                    color: $white;
+                }
+            }
+            & textarea {
+                resize: none;
+                -webkit-resize: none;
+                height: auto;
+            }
+        }
+    }
+    & .sbmt-btn {
+        width: rem(195);
+        height: rem(51);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: rem(20);
+        font-weight: 500;
+        color: $black;
+        background: $white;
+        border-radius: rem(30);
+        border: 0;margin: auto;
+        cursor: pointer;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+            background: $main-color;
+            color: $white;
+        }
+    }
+}

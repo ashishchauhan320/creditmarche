@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Publish an offer::MarcheCredit</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" sizes="32x32" type="image/x-icon">
+    <!-- Custom - from scss/style.scss -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pk-loader">
+        <svg id="triangle" viewBox="-3 -4 39 39">
+             <polygon fill="#EFEFEF" stroke="#555" stroke-width="1" points="16,0 32,32 0,32"></polygon>
+        </svg>
+        <div class="loader-text">© 2018 CreditMarche.</div>
+    </div>
+    <!-- Header Starts Here -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="current-menu-item"><a href="index.html">Home</a></li>
+                    <li><a href="#">View Offers</a></li>
+                    <li><a href="#">Publish an Offer</a></li>
+                </ul>
+            </nav>
+            <a class="logo" href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <aside class="authentication-sec">
+                <a href="#" class="login-btn"  data-toggle="modal" data-target="#login">login</a>
+                <a href="#" class="signup-btn"  data-toggle="modal" data-target="#login">sign up</a>
+            </aside>
+        </div>
+    </header>
+    <!-- Header Ends Here -->
+    <section class="internal-banner" style="background:url(images/banner-image.jpg);">
+        <div class="container">
+            <h1>Phone Credit Trading Place</h1>
+        </div>
+    </section>
+    <section class="market-rates-section" style="background:url(images/market-rate-bg.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="rates-block">
+                        <div class="block">
+                            <div class="networks-type">
+                                <span class="type1">o</span>
+                                <span class="type2">k</span>
+                            </div>
+                            <div class="credit-market-rates">
+                                <h3>Credit Market Rate</h3>
+                                <p>216% <span class="dec">(-12 pts)</span></p>
+                                <p>278% <span class="dec">(-16 pts)</span></p>
+                            </div>
+                            <div class="internetV-market-rates">
+                                <h3>Internet V. Market Rate (F/MB)</h3>
+                                <p>0.25 <span class="dec">(-14%)</span></p>
+                                <p>0.15 <span class="inc">(+18%)</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rates-block">
+                        <div class="block">
+                            <div class="networks-type">
+                                <span class="type3">T</span>
+                                <span class="type4">E</span>
+                            </div>
+                            <div class="credit-market-rates">
+                                <h3>Credit Market Rate</h3>
+                                <p>655% <span class="dec">(+19 pts)</span></p>
+                                <p>857% <span class="dec">(-11 pts)</span></p>
+                            </div>
+                            <div class="internetV-market-rates">
+                                <h3>Internet V. Market Rate (F/MB)</h3>
+                                <p>0.13 <span class="dec">(-3%)</span></p>
+                                <p>0.09 <span class="inc">(+10%)</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="publish-offer">
+        <div class="container">
+            <h2 class="title"><span>Publish</span> an offer</h2>
+            <div class="publish-window">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-PublishOffer-tab" data-toggle="pill" href="#pills-PublishOffer" role="tab" aria-controls="pills-PublishOffer" aria-selected="true">Publish an Offer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-internetOffer-tab" data-toggle="pill" href="#pills-internetOffer" role="tab" aria-controls="pills-internetOffer" aria-selected="false">Publish an Internet Offer</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-PublishOffer" role="tabpanel" aria-labelledby="pills-PublishOffer-tab">
+                        <form>
+                            <div class="form-group">
+                                <div class="form-control">
+                                    <label>Value of Credits (F):</label>
+                                    <input type="text" placeholder="Enter Value of Credit">
+                                </div>
+                                <div class="form-control">
+                                    <label>Credits Expiration Date:</label>
+                                    <input id="datepicker" type="text" placeholder="Enter Date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-control">
+                                    <label>Selling Price (F):</label>
+                                    <input type="text" placeholder="Enter Value">
+                                </div>
+                                <div class="form-control">
+                                    <label>Promotion Type:</label>
+                                    <input disabled type="text" placeholder="Calculated">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-control slct">
+                                    <label>Bonus Crédits valid on Network:</label>
+                                    <select>
+                                        <option>Any Network</option>
+                                        <option>Network 1</option>
+                                        <option>Network 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input class="validate-btn" type="button" value="validate offer">
+                            <input class="publish-btn" type="button" value="publish offer">
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="pills-internetOffer" role="tabpanel" aria-labelledby="pills-internetOffer-tab">
+
+                        <form>
+                            <div class="form-group">
+                                <div class="form-control">
+                                    <label>Internet volume</label>
+                                    <input type="text" placeholder="Enter the Internet Volume">
+                                </div>
+                                <div class="form-control">
+                                    <label>Credits Expiration Date:</label>
+                                    <input id="datepicker1" type="text" placeholder="Enter Date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-control">
+                                    <label>Selling Price (F):</label>
+                                    <input type="text" placeholder="Enter Value">
+                                </div>
+                            </div>
+                            <input class="validate-btn" type="button" value="validate offer">
+                            <input class="publish-btn" type="button" value="publish offer">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="person-image wow zoomIn">
+                <img src="images/dummy-person-img.png" alt="person-image">
+            </div>
+        </div>
+    </section>
+    <!-- Footer Starts Here -->
+    <footer>
+        <div class="container">
+            <div class="wrap">
+                <div class="footer-nav">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="foot-block">
+                                <h3>Quick Links</h3>
+                                <ul>
+                                    <li><a href="#">How Are We?</a></li>
+                                    <li><a href="#">FAQ - Help</a></li>
+                                    <li><a href="#">Terms and Conditions</a></li>
+                                    <li><a href="#">Security Advices</a></li>
+                                    <li><a href="#">Web TV</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="foot-block">
+                                <h3>contact us</h3>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Street Address</span>123 lorem ipsu, South Africa
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-print" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Fax phone Number</span>123 456 7899
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contct-info">
+                                    <div class="icon">
+                                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="dtl">
+                                        <p>
+                                            <span>Mobile Number</span><a href="tel:1234567899">123 456 7899</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="get-in-touch">
+                        <h2>get in touch</h2>
+                        <form>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Phone">
+                            </div>
+                            <div class="form-group txt">
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <input class="sbmt-btn" type="submit" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="footer-nav">
+                <div class="copy-right-sec">
+                    <p>Copyright © 2018 CreditMarche. Powered by: <a href="#" target="_blank">iMarkInfotech</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends Here -->
+    <!-- jQuery (necessary for JavaScript plugins) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Our Custom js here -->
+    <script src="js/custom.js"></script>
+    
+    <!-- login/register modal -->
+<div class="modal fade login-reg" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-register-tab" data-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">register</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                        <div class="login-form">
+                            <form>
+                                <ul>
+                                    <li>
+                                        <label>Tel.Number<span>*</span></label>
+                                        <input type="text" placeholder="77 - 928 - 4589">
+                                    </li>
+                                    <li>
+                                        <label>Pin</label>
+                                        <input type="password" placeholder="12345678">
+                                    </li>
+                                </ul>
+                                <input type="button" value="login">
+                                <input type="button" value="pin reset">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                        <div class="reg-form">
+                            <form>
+                                <ul>
+                                    <li>
+                                        <label>Civility</label>
+                                        <div class="slct">
+                                            <select>
+                                                <option>Mr.</option>
+                                                <option>Mrs.</option>
+                                                <option>Ms.</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>First Name<span>*</span></label>
+                                        <input type="text" placeholder="Karim">
+                                    </li>
+                                    <li>
+                                        <label>last name</label>
+                                        <input type="text" placeholder="LY">
+                                    </li>
+                                    <li>
+                                        <label>Tel.Number<span>*</span></label>
+                                        <input type="text" placeholder="77 - 928 - 4589">
+                                    </li>
+                                    <li>
+                                        <label>Region of Residence</label>
+                                        <div class="slct">
+                                            <select>
+                                                <option>Kédougou</option>
+                                                <option>region</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Network Operator:</label>
+                                        <div class="slct">
+                                            <select>
+                                               <option>Tigo</option>
+                                               <option>operator</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Age range</label>
+                                        <div class="slct">
+                                            <select>
+                                               <option>18-25</option>
+                                               <option>26-35</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Choose Access PIN (4 Digits):</label>
+                                        <input type="password" placeholder="12345678">
+                                    </li>
+                                    <li>
+                                        <label>Confirm Access PIN:</label>
+                                        <input type="password" placeholder="12345678">
+                                    </li>
+                                    <li>
+                                        <label>Last 5 Digits of Nat ID or Passport:</label>
+                                        <input type="text" placeholder="12345678">
+                                    </li>
+                                    <li>
+                                        <label>Email Adress:</label>
+                                        <input type="email" placeholder="karimly@hotmail.com">
+                                    </li>
+                                </ul>
+                                <input type="button" value="register">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+
+</html>
